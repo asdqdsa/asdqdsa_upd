@@ -1,0 +1,52 @@
+body{
+    background-color:#7386be;
+}
+.div0{
+    width:360px;
+    padding: 10% 0 0;
+    margin: auto;
+}
+.div1 {
+    position: relative;
+    background: #a0add6;
+    max-width: 360px;
+    padding: 45px;
+    text-align: center;
+    border-radius: 2px;
+}
+.form input {
+    background: white;
+    width: 100%;
+    border: 0;
+    border-radius: 2px;
+    margin: 0 0 1px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 15px;    
+}
+.form button {
+    background-color: white;
+    color: black;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 2px;    
+    width: 50% 2%;
+    opacity: 0.9;
+    border: black 10px;    
+}
+
+.clock {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 18px;
+    font-family: Consolas;
+}
+.message1 {
+    font-family: Consolas;
+    font-size: 14px;
+}
+.h3 {
+    font-family:sans-serif;
+    font-size: 22px;
+}
