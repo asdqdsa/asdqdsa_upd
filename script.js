@@ -1,9 +1,9 @@
 // JavaScript source code
-const regexpassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{6,}$/ // regex âûðàæåíèå äëÿ ïðîâåðêè ïàðîëÿ
-const regexmail = /[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,9}/i;  // regex âûðàæåíèå äëÿ ïðîâåðêè èìåíè
-const regexphone = /^(\+7|7|8)(\([0-9][0-9]{2}\)|[0-9][0-9]{2})([0-9]{7})$/  // regex âûðàæåíèå äëÿ ïðîâåðêè òåëåôîíà
+const regexpassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{6,}$/ // regex Ã¢Ã»Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨ Ã¯Ã Ã°Ã®Ã«Ã¿
+const regexmail = /[0-9a-z_-]+@[0-9a-z_-]+\.[a-z]{2,9}/i;  // regex Ã¢Ã»Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨ Ã¨Ã¬Ã¥Ã­Ã¨
+const regexphone = /^(\+7|8)(\([0-9][0-9]{2}\)|[0-9][0-9]{2})([0-9]{7})$/  // regex Ã¢Ã»Ã°Ã Ã¦Ã¥Ã­Ã¨Ã¥ Ã¤Ã«Ã¿ Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨ Ã²Ã¥Ã«Ã¥Ã´Ã®Ã­Ã 
 
-//ïðîâåðêà ïóñòîãî ïîëÿ è çàäàííûõ óñëîâèé ñ âûâîäîì îøèáêè ïî êëèêó
+//Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã¯Ã³Ã±Ã²Ã®Ã£Ã® Ã¯Ã®Ã«Ã¿ Ã¨ Ã§Ã Ã¤Ã Ã­Ã­Ã»Ãµ Ã³Ã±Ã«Ã®Ã¢Ã¨Ã© Ã± Ã¢Ã»Ã¢Ã®Ã¤Ã®Ã¬ Ã®Ã¸Ã¨Ã¡ÃªÃ¨ Ã¯Ã® ÃªÃ«Ã¨ÃªÃ³
 function empty() {
     var name = document.getElementById("name").value 
     var password = document.getElementById("password").value
@@ -28,23 +28,27 @@ function empty() {
         document.getElementById('message2').innerText = "*Incorrect password*"
         return false 
     } 	
+	else {
+        if (password !== "")
+        document.getElementById('message2').innerHTML = "&nbsp;"
+    }
 	if (phone == "") {
-        document.getElementById('message2').innerText ="*Please enter your phone*"
+        document.getElementById('message3').innerText ="*Please enter your phone*"
         return false
     }
 	if (!regexphone.test(phone)) {
-        document.getElementById('message2').innerText = "*Incorrect phone*"
+        document.getElementById('message3').innerText = "*Incorrect phone*"
         return false 
     } 	
 } 
-//÷àñû ñ äàòîé è ä.íåäåëè
+//Ã·Ã Ã±Ã» Ã± Ã¤Ã Ã²Ã®Ã© Ã¨ Ã¤.Ã­Ã¥Ã¤Ã¥Ã«Ã¨
 function displaytime() {
     var date = new Date()
     var h = date.getHours()
     var m = date.getMinutes()
     var s = date.getSeconds()
     var y = date.getFullYear()
-    var mn = date.getMonth() + 1 // ïî óìîë÷àíèþ ñ÷åò ìåñÿöà ïðîèñõîäèò ñ 0
+    var mn = date.getMonth() + 1 // Ã¯Ã® Ã³Ã¬Ã®Ã«Ã·Ã Ã­Ã¨Ã¾ Ã±Ã·Ã¥Ã² Ã¬Ã¥Ã±Ã¿Ã¶Ã  Ã¯Ã°Ã®Ã¨Ã±ÃµÃ®Ã¤Ã¨Ã² Ã± 0
     var ch = date.getDate()
     var weekday = new Array(7)
         weekday[0] = "Sunday"
@@ -58,13 +62,13 @@ function displaytime() {
    
     var time = weekday[new Date(date).getDay()] + " " + h + ":" + m + ":" + s + " " + ch + "/" + mn + "/" + y
     document.getElementById("timedate").innerText = time
-    setTimeout(displaytime, 1000) //òàéìåð âûçîâà ôóíêöèè 1 ñåê.
+    setTimeout(displaytime, 1000) //Ã²Ã Ã©Ã¬Ã¥Ã° Ã¢Ã»Ã§Ã®Ã¢Ã  Ã´Ã³Ã­ÃªÃ¶Ã¨Ã¨ 1 Ã±Ã¥Ãª.
 }
 displaytime()
-//ïðîâåðêà áðàóçåðà IE
+//Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã¡Ã°Ã Ã³Ã§Ã¥Ã°Ã  IE
 function msieversion() {
     var ua = window.navigator.userAgent
-    var msie = ua.indexOf("MSIE ") // -1 åñëè íåò ñîâïàäåíèÿ
+    var msie = ua.indexOf("MSIE ") // -1 Ã¥Ã±Ã«Ã¨ Ã­Ã¥Ã² Ã±Ã®Ã¢Ã¯Ã Ã¤Ã¥Ã­Ã¨Ã¿
     var trident = ua.indexOf('Trident/')
 
     if (msie > 0 || trident > 0)
